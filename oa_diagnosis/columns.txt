@@ -1,0 +1,407 @@
+Columns:
+ID
+SIDE
+VERSION
+CASE
+GROUPTYPE
+JSPAINPRG
+JSONLYPRG
+PAINONLYPRG
+NONPRG
+V00XRJSM
+V00XRKL
+V00XRJSL
+V01XRJSM
+V01XRKL
+V01XRJSL
+V03XRJSM
+V03XRKL
+V03XRJSL
+V05XRJSM
+V05XRKL
+V05XRJSL
+V06XRJSM
+V06XRKL
+V06XRJSL
+V00MCMJSW
+V01MCMJSW
+V03MCMJSW
+V05MCMJSW
+V06MCMJSW
+P01KPMEDCV
+P01BMI
+V00AGE
+P02SEX
+P02HISP
+V00COHORT
+P02RACE
+V00WOMKP
+V01WOMKP
+V03WOMKP
+V05WOMKP
+V06WOMKP
+V00WOMADL
+V01WOMADL
+V03WOMADL
+V05WOMADL
+V06WOMADL
+JSPRG
+PAINPRG
+Boneshape_SIDE
+Boneshape_V00MF_tAB
+Boneshape_V00LF_tAB
+Boneshape_V00MT_tAB
+Boneshape_V00LT_tAB
+Boneshape_V00MP_tAB
+Boneshape_V00LP_tAB
+Boneshape_V00notch
+Boneshape_V00TrFLat
+Boneshape_V00TrFMed
+Boneshape_V00nFemurOAVector
+Boneshape_V00nTibiaOAVector
+Boneshape_V00nPatellaOAVector
+Boneshape_V00BARCDIM
+Biomediq_SIDE
+Biomediq_V00MedialTibialCartilage
+Biomediq_V00LateralTibialCartilage
+Biomediq_V00MedialFemoralCartilage
+Biomediq_V00LateralFemoralCartilage
+Biomediq_V00PatellarCartilage
+Biomediq_V00MedialMeniscus
+Biomediq_V00LateralMeniscus
+Biomediq_V00BARCDED
+Chondro_side
+Chondro_V00WMTVCL
+Chondro_V00WMTSBA
+Chondro_V00WMTVCN
+Chondro_V00WMTMTH
+Chondro_V00WMTACS
+Chondro_V00WMTPD
+Chondro_V00WMTCAAB
+Chondro_V00WMTMTC
+Chondro_V00WMTMAV
+Chondro_V00WMTCTS
+Chondro_V00WMTACV
+Chondro_V00CMTMAT
+Chondro_V00CMTMTH
+Chondro_V00EMTMTH
+Chondro_V00IMTMTH
+Chondro_V00AMTMTH
+Chondro_V00PMTMTH
+Chondro_V00CMTPD
+Chondro_V00EMTPD
+Chondro_V00IMTPD
+Chondro_V00AMTPD
+Chondro_V00PMTPD
+Chondro_V00BMFVCL
+Chondro_V00BMFSBA
+Chondro_V00BMFVCN
+Chondro_V00BMFMTH
+Chondro_V00BMFACS
+Chondro_V00BMFPD
+Chondro_V00BMFCAAB
+Chondro_V00BMFMTC
+Chondro_V00BMFMAV
+Chondro_V00BMFCTS
+Chondro_V00BMFACV
+Chondro_V00CBMFMAT
+Chondro_V00CBMFMTH
+Chondro_V00EBMFMTH
+Chondro_V00IBMFMTH
+Chondro_V00CBMFPD
+Chondro_V00EBMFPD
+Chondro_V00IBMFPD
+Chondro_V00WMTFVCL
+Chondro_V00WMTFVCN
+Chondro_V00WMTFMTH
+Chondro_V00WMTFMAV
+Chondro_V00BMTFMAT
+Chondro_V00BMTFMTH
+Chondro_V00WLTVCL
+Chondro_V00WLTSBA
+Chondro_V00WLTVCN
+Chondro_V00WLTMTH
+Chondro_V00WLTACS
+Chondro_V00WLTPD
+Chondro_V00WLTCAAB
+Chondro_V00WLTMTC
+Chondro_V00WLTMAV
+Chondro_V00WLTCTS
+Chondro_V00WLTACV
+Chondro_V00CLTMAT
+Chondro_V00CLTMTH
+Chondro_V00ELTMTH
+Chondro_V00ILTMTH
+Chondro_V00ALTMTH
+Chondro_V00PLTMTH
+Chondro_V00CLTPD
+Chondro_V00ELTPD
+Chondro_V00ILTPD
+Chondro_V00ALTPD
+Chondro_V00PLTPD
+Chondro_V00BLFVCL
+Chondro_V00BLFSBA
+Chondro_V00BLFVCN
+Chondro_V00BLFMTH
+Chondro_V00BLFACS
+Chondro_V00BLFPD
+Chondro_V00BLFCAAB
+Chondro_V00BLFMTC
+Chondro_V00BLFMAV
+Chondro_V00BLFCTS
+Chondro_V00BLFACV
+Chondro_V00CBLFMAT
+Chondro_V00CBLFMT
+Chondro_V00EBLFMT
+Chondro_V00IBLFMT
+Chondro_V00CBLFPD
+Chondro_V00EBLFPD
+Chondro_V00IBLFPD
+Chondro_V00WLTFVCL
+Chondro_V00WLTFVCN
+Chondro_V00WLTFMTH
+Chondro_V00WLTFMAV
+Chondro_V00BLTFMAT
+Chondro_V00BLTFMTH
+Chondro_V00BARCDFE
+Labcorp_V00Serum_C1_2C_lc
+Labcorp_V00Serum_C2C_lc
+Labcorp_V00Serum_COLL2_1_NO2_lc
+Labcorp_V00Serum_CPII_lc
+Labcorp_V00Serum_CS846_lc
+Labcorp_V00Serum_CTXI_lc
+Labcorp_V00Serum_Comp_lc
+Labcorp_V00Serum_HA_lc
+Labcorp_V00Serum_MMP_3_lc
+Labcorp_V00Serum_NTXI_lc
+Labcorp_V00Serum_PIIANP_lc
+Labcorp_V00Urine_CTXII_lc
+Labcorp_V00Urine_C1_2C_lc
+Labcorp_V00Urine_C2C_lc
+Labcorp_V00Urine_Creatinine_lc
+Labcorp_V00Urine_NTXI_lc
+Labcorp_V00Urine_alpha_lc
+Labcorp_V00Urine_beta_lc
+Labcorp_V00Urine_Col21N2SD
+Labcorp_V00Urine_Col21N2CV
+Labcorp_V00Serum_C2C_lowlim
+Labcorp_V00Serum_COLL2_1_NO2_lowlim
+Labcorp_V00Serum_CPII_lowlim
+Labcorp_V00Serum_CS846_lowlim
+Labcorp_V00Serum_CTXI_lowlim
+Labcorp_V00Serum_Comp_lowlim
+Labcorp_V00Serum_HA_lowlim
+Labcorp_V00Serum_MMP_3_lowlim
+Labcorp_V00Serum_NTXI_lowlim
+Labcorp_V00Serum_PIIANP_lowlim
+Labcorp_V00Urine_CTXII_lowlim
+Labcorp_V00Urine_C1_2C_lowlim
+Labcorp_V00Urine_C2C_lowlim
+Labcorp_V00Urine_NTXI_lowlim
+Labcorp_V00Urine_alpha_lowlim
+Labcorp_V00Urine_beta_lowlim
+Labcorp_V00Urine_Col21N2_lowlim
+
+First row:
+ID: 9001695
+SIDE: 1: Right
+VERSION: 1
+CASE: 2
+GROUPTYPE: JSL Only Progressor
+JSPAINPRG: 0
+JSONLYPRG: 1
+PAINONLYPRG: 0
+NONPRG: 0
+V00XRJSM: 1
+V00XRKL: 2:02:00
+V00XRJSL: 0
+V01XRJSM: 1.6
+V01XRKL: 2:02:00
+V01XRJSL: 0.0
+V03XRJSM: 1.6
+V03XRKL: 2:02:00
+V03XRJSL: 0
+V05XRJSM: nan
+V05XRKL: 3:04:00
+V05XRJSL: nan
+V06XRJSM: 2.0
+V06XRKL: 3:03:00
+V06XRJSL: 0.0
+V00MCMJSW: 4.488
+V01MCMJSW: 3.9
+V03MCMJSW: 4.02
+V05MCMJSW: nan
+V06MCMJSW: 3.513
+P01KPMEDCV: 0: No
+P01BMI: 28.6
+V00AGE: 52
+P02SEX: 2: Female
+P02HISP: 0: No
+V00COHORT: 2: Incidence
+P02RACE: 1: White or Caucasian
+V00WOMKP: 0
+V01WOMKP: 0.0
+V03WOMKP: 0.0
+V05WOMKP: nan
+V06WOMKP: 5.0
+V00WOMADL: 0.0
+V01WOMADL: 10.0
+V03WOMADL: 0.0
+V05WOMADL: nan
+V06WOMADL: 17.0
+JSPRG: 1
+PAINPRG: 0
+Boneshape_SIDE: 1: Right
+Boneshape_V00MF_tAB: 2713.759529
+Boneshape_V00LF_tAB: 1896.909764
+Boneshape_V00MT_tAB: 1191.057075
+Boneshape_V00LT_tAB: 991.4466783
+Boneshape_V00MP_tAB: 456.3290206
+Boneshape_V00LP_tAB: 577.7962747
+Boneshape_V00notch: 1703.102577
+Boneshape_V00TrFLat: 1405.457591
+Boneshape_V00TrFMed: 739.1718177
+Boneshape_V00nFemurOAVector: -0.407124272
+Boneshape_V00nTibiaOAVector: -1.756346589
+Boneshape_V00nPatellaOAVector: -0.059982925
+Boneshape_V00BARCDIM: 16610098612
+Biomediq_SIDE: 1: Right
+Biomediq_V00MedialTibialCartilage: 2276.8969
+Biomediq_V00LateralTibialCartilage: 2043.4478
+Biomediq_V00MedialFemoralCartilage: 6735.7852
+Biomediq_V00LateralFemoralCartilage: 7716.4764
+Biomediq_V00PatellarCartilage: 3427.8599
+Biomediq_V00MedialMeniscus: 3666.3335
+Biomediq_V00LateralMeniscus: 2955.658
+Biomediq_V00BARCDED: 16610098612
+Chondro_side: 1: Right
+Chondro_V00WMTVCL: 1785.6911
+Chondro_V00WMTSBA: 10.2278
+Chondro_V00WMTVCN: 1.7459
+Chondro_V00WMTMTH: 1.7073
+Chondro_V00WMTACS: 10.6351
+Chondro_V00WMTPD: 0.0
+Chondro_V00WMTCAAB: 10.2278
+Chondro_V00WMTMTC: 1.7073
+Chondro_V00WMTMAV: 2.7744
+Chondro_V00WMTCTS: 0.5327
+Chondro_V00WMTACV: 31.1579
+Chondro_V00CMTMAT: 1.7213
+Chondro_V00CMTMTH: 2.3005
+Chondro_V00EMTMTH: 1.6018
+Chondro_V00IMTMTH: 2.206
+Chondro_V00AMTMTH: 1.5003
+Chondro_V00PMTMTH: 1.2514
+Chondro_V00CMTPD: 0.0
+Chondro_V00EMTPD: 0.0
+Chondro_V00IMTPD: 0.0
+Chondro_V00AMTPD: 0.0
+Chondro_V00PMTPD: 0.0
+Chondro_V00BMFVCL: 1954.8619
+Chondro_V00BMFSBA: 9.1941
+Chondro_V00BMFVCN: 2.1262
+Chondro_V00BMFMTH: 2.0157
+Chondro_V00BMFACS: 9.7435
+Chondro_V00BMFPD: 0.0
+Chondro_V00BMFCAAB: 9.1941
+Chondro_V00BMFMTC: 2.0157
+Chondro_V00BMFMAV: 2.7143
+Chondro_V00BMFCTS: 0.3528
+Chondro_V00BMFACV: 17.549
+Chondro_V00CBMFMAT: 1.6543
+Chondro_V00CBMFMTH: 2.0531
+Chondro_V00EBMFMTH: 2.0292
+Chondro_V00IBMFMTH: 1.9732
+Chondro_V00CBMFPD: 0.0
+Chondro_V00EBMFPD: 0.0
+Chondro_V00IBMFPD: 0.0
+Chondro_V00WMTFVCL: 3740.553
+Chondro_V00WMTFVCN: 3.8721
+Chondro_V00WMTFMTH: 3.723
+Chondro_V00WMTFMAV: 5.4887
+Chondro_V00BMTFMAT: 3.3756
+Chondro_V00BMTFMTH: 4.3536
+Chondro_V00WLTVCL: 1387.9817
+Chondro_V00WLTSBA: 9.4182
+Chondro_V00WLTVCN: 1.4737
+Chondro_V00WLTMTH: 1.3747
+Chondro_V00WLTACS: 8.1981
+Chondro_V00WLTPD: 21.8095
+Chondro_V00WLTCAAB: 7.3641
+Chondro_V00WLTMTC: 1.7388
+Chondro_V00WLTMAV: 3.2019
+Chondro_V00WLTCTS: 1.0329
+Chondro_V00WLTACV: 75.1432
+Chondro_V00CLTMAT: 0.0794
+Chondro_V00CLTMTH: 2.6265
+Chondro_V00ELTMTH: 1.845
+Chondro_V00ILTMTH: 0.351
+Chondro_V00ALTMTH: 1.6583
+Chondro_V00PLTMTH: 0.5183
+Chondro_V00CLTPD: 0.0741
+Chondro_V00ELTPD: 0.0
+Chondro_V00ILTPD: 55.5019
+Chondro_V00ALTPD: 0.0
+Chondro_V00PLTPD: 54.5644
+Chondro_V00BLFVCL: 1795.927
+Chondro_V00BLFSBA: 8.3153
+Chondro_V00BLFVCN: 2.1598
+Chondro_V00BLFMTH: 2.0487
+Chondro_V00BLFACS: 8.1351
+Chondro_V00BLFPD: 9.5263
+Chondro_V00BLFCAAB: 7.5232
+Chondro_V00BLFMTC: 2.2562
+Chondro_V00BLFMAV: 3.2931
+Chondro_V00BLFCTS: 0.8295
+Chondro_V00BLFACV: 40.5245
+Chondro_V00CBLFMAT: 0.0
+Chondro_V00CBLFMT: 2.1192
+Chondro_V00EBLFMT: 2.4236
+Chondro_V00IBLFMT: 1.6032
+Chondro_V00CBLFPD: 12.5553
+Chondro_V00EBLFPD: 0.0
+Chondro_V00IBLFPD: 16.0572
+Chondro_V00WLTFVCL: 3183.9087
+Chondro_V00WLTFVCN: 3.6335
+Chondro_V00WLTFMTH: 3.4234
+Chondro_V00WLTFMAV: 6.495
+Chondro_V00BLTFMAT: 0.0794
+Chondro_V00BLTFMTH: 4.7457
+Chondro_V00BARCDFE: 16610098612
+Labcorp_V00Serum_C1_2C_lc: 0.45
+Labcorp_V00Serum_C2C_lc: 191.0
+Labcorp_V00Serum_COLL2_1_NO2_lc: 11.1775
+Labcorp_V00Serum_CPII_lc: 668.0
+Labcorp_V00Serum_CS846_lc: < 100
+Labcorp_V00Serum_CTXI_lc: 1.077
+Labcorp_V00Serum_Comp_lc: 457
+Labcorp_V00Serum_HA_lc: < 50
+Labcorp_V00Serum_MMP_3_lc: 12.28
+Labcorp_V00Serum_NTXI_lc: 22
+Labcorp_V00Serum_PIIANP_lc: 1813.0
+Labcorp_V00Urine_CTXII_lc: 7.52
+Labcorp_V00Urine_C1_2C_lc: 0.14
+Labcorp_V00Urine_C2C_lc: 1952
+Labcorp_V00Urine_Creatinine_lc: 15.5
+Labcorp_V00Urine_NTXI_lc: 955
+Labcorp_V00Urine_alpha_lc: 14.57
+Labcorp_V00Urine_beta_lc: 86.38
+Labcorp_V00Urine_Col21N2SD: 0.045970419
+Labcorp_V00Urine_Col21N2CV: 18.94761859
+Labcorp_V00Serum_C2C_lowlim: 0.0
+Labcorp_V00Serum_COLL2_1_NO2_lowlim: 0.0
+Labcorp_V00Serum_CPII_lowlim: 0.0
+Labcorp_V00Serum_CS846_lowlim: 1.0
+Labcorp_V00Serum_CTXI_lowlim: 0.0
+Labcorp_V00Serum_Comp_lowlim: 0.0
+Labcorp_V00Serum_HA_lowlim: 1.0
+Labcorp_V00Serum_MMP_3_lowlim: 0.0
+Labcorp_V00Serum_NTXI_lowlim: 0.0
+Labcorp_V00Serum_PIIANP_lowlim: 0.0
+Labcorp_V00Urine_CTXII_lowlim: 0
+Labcorp_V00Urine_C1_2C_lowlim: 0
+Labcorp_V00Urine_C2C_lowlim: 0
+Labcorp_V00Urine_NTXI_lowlim: 0
+Labcorp_V00Urine_alpha_lowlim: 0
+Labcorp_V00Urine_beta_lowlim: 0
+Labcorp_V00Urine_Col21N2_lowlim: 0
