@@ -87,25 +87,19 @@ class ChainlitUserProxyAgent(autogen.UserProxyAgent):
                 super().receive(message, sender, request_reply, silent)
                 return
 
-            # Suppress repeated patient profile dumps from Assessment_Agent
-            # Track shown profiles by patient_id to allow displaying once at the start.
+            # Suppress JSON outputs from internal agents to keep UI clean
+            # Assessment_Agent, Physiologist_Agent, and Therapy_Group_Manager produce structured data
+            # that is used by other agents but doesn't need to clutter the user interface
             try:
-                if actual_author == "Assessment_Agent" and isinstance(parsed, dict):
-                    # Initialize storage lazily
-                    if not hasattr(self, "_shown_patient_profiles"):
-                        self._shown_patient_profiles = set()
-
-                    # Heuristic keys that indicate a patient profile
-                    profile_keys = {"patient_id", "age", "gender", "bmi", "imaging_ids", "biomarkers"}
-                    if profile_keys.intersection(set(parsed.keys())):
-                        pid = parsed.get("patient_id") or parsed.get("id")
-                        if pid and pid in self._shown_patient_profiles:
-                            # Already shown, skip displaying this repeated profile
-                            super().receive(message, sender, request_reply, silent)
-                            return
-                        else:
-                            if pid:
-                                self._shown_patient_profiles.add(pid)
+                if actual_author in ("Assessment_Agent", "Physiologist_Agent", "Therapy_Group_Manager"):
+                    # Skip if parsed content is a dict (structured data)
+                    if isinstance(parsed, dict):
+                        super().receive(message, sender, request_reply, silent)
+                        return
+                    # Also skip if content is a JSON string
+                    if isinstance(content, str) and content.strip().startswith("{"):
+                        super().receive(message, sender, request_reply, silent)
+                        return
             except Exception:
                 # Non-fatal if tracking fails; continue to display message
                 pass
@@ -232,17 +226,60 @@ def setup_and_run_workflow(patient_id: str):
     # 5. Create Lead Consultant (Orchestrator)
     lead_consultant = create_lead_consultant_agent(groupchat)
 
+    # -----------------------------------------------------------------
+    # Optional: Focused Image Display for Specific Patient IDs
+    # If a user requests a patient for which we want to display a curated
+    # subset of images (e.g., demonstration or QA), show those first and
+    # avoid flooding the UI with every image.
+    try:
+        patient_data_preview = load_patient_data(patient_id)
+        imaging_ids_list = patient_data_preview.get('imaging_ids', []) if isinstance(patient_data_preview, dict) else []
+
+        focus_map = {
+            "9001695": [
+                f"{patient_id}|20041203/00422803_1x1.jpg",
+                f"{patient_id}|20050104/10098604_2x2.jpg",
+                f"{patient_id}|20050104/10098607_2x2.jpg",
+            ]
+        }
+
+        if patient_id in focus_map:
+            cl.run_sync(cl.Message(content=f"🔎 Displaying selected images for {patient_id}", author="System").send())
+            for iid in focus_map[patient_id]:
+                if iid in imaging_ids_list:
+                    try:
+                        analyze_imaging_with_display(iid)
+                    except Exception as e:
+                        print(f"DEBUG: Failed to display focused image {iid}: {e}")
+                else:
+                    print(f"DEBUG: Focus image {iid} not found in imaging_ids_list")
+    except Exception as e:
+        print(f"DEBUG: Error while attempting focused image display: {e}")
+
     # ---------------------------------------------------------------------
     # STAGE 1: Primary Consultation
     # ---------------------------------------------------------------------
     cl.run_sync(cl.Message(content=f"### Stage 1: Primary Consultation for {patient_id}", author="System").send())
     
+    # Decide whether to ask agents to analyze all imaging_ids or a focused subset
+    analyze_instruction = "Use the 'analyze_imaging' tool with EACH imaging_id returned in the patient data (found in the 'imaging_ids' field). Analyze ALL knee images for this patient."
+    try:
+        # If a focus_map was defined earlier, and patient_id is in it, instruct agents to analyze only that subset
+        if 'focus_map' in locals() and patient_id in focus_map:
+            focused_list = "\n".join(focus_map[patient_id])
+            analyze_instruction = (
+                "IMPORTANT - For this run, analyze ONLY the following imaging IDs (focused subset):\n"
+                + focused_list
+            )
+    except Exception:
+        pass
+
     initial_message = f"""
     START DIAGNOSIS for Patient ID: {patient_id}.
     
     STAGE 1 GOAL: 
     1. Assessment_Agent: Use 'load_patient_data' tool to fetch demographics, history, biomarker data, and imaging_ids for Patient {patient_id}.
-    2. Structuralist_Agent: IMPORTANT - Use the 'analyze_imaging' tool with EACH imaging_id returned in the patient data (found in the 'imaging_ids' field). Analyze ALL knee images for this patient.
+    2. Structuralist_Agent: {analyze_instruction}
     3. Physiologist_Agent: Analyze the biomarker and clinical data.
     
     Determine if there is a conflict between Structural/Imaging status and Clinical/Biomarker risk.
@@ -263,6 +300,21 @@ def setup_and_run_workflow(patient_id: str):
     
     # NOTE: We use clear_history=True to avoid '400' errors from dangling tool calls in previous chat.
     # We restate the context (Patient ID) so agents know what to work on.
+
+    # Decide whether to analyze all images or only the focused subset for follow-up
+    follow_up_analyze_instruction = "Structuralist_Agent: Re-evaluate imaging using the 'analyze_imaging' tool for imaging_ids returned in patient data."
+    try:
+        if 'focus_map' in locals() and patient_id in focus_map:
+            focused_list = "\n".join(focus_map[patient_id])
+            follow_up_analyze_instruction = (
+                "Structuralist_Agent: For this follow-up, analyze ONLY the following imaging IDs (focused subset):\n"
+                + focused_list
+            )
+    except Exception:
+        pass
+
+    Task = "Re-evaluate phenotype based on this progression."
+    Lead = "Lead Consultant: Finalize phenotype (Rapid Progressor vs Others)."
     follow_up_message = f"""
     STAGE 2: FOLLOW-UP (4 YEARS LATER) for Patient {patient_id}.
     
@@ -270,9 +322,10 @@ def setup_and_run_workflow(patient_id: str):
     - Assume 4 years have passed.
     - New Imaging (Simulated): JSN has increased by 0.8mm.
     - Biomarkers: Remain elevated.
-    
-    Task: Re-evaluate phenotype based on this progression. 
-    Lead Consultant: Finalize phenotype (Rapid Progressor vs Others).
+
+    Task: {Task}
+    {follow_up_analyze_instruction}
+    {Lead}
     """
     
     user_proxy.initiate_chat(
@@ -307,7 +360,7 @@ def setup_and_run_workflow(patient_id: str):
 @cl.on_chat_start
 async def start():
     # 1. Greet User
-    await cl.Message(content="Welcome to the OA Diagnosis System. Please enter a Patient ID (e.g., 9001695) to begin.").send()
+    await cl.Message(content="Welcome to the OA Diagnosis System. Please enter a Patient ID to begin.").send()
     
     # 2. Ask for Patient ID
     res = await cl.AskUserMessage(content="Patient ID:", timeout=120).send()

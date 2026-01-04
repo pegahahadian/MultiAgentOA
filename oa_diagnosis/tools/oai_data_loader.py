@@ -103,10 +103,11 @@ def _find_patient_images(patient_id: str):
         return []
     
     found_images = []
-    # Recursively find .tar.gz files
+    # Recursively find .tar.gz and preview image files (jpg/png)
     for root, dirs, files in os.walk(img_dir):
         for file in files:
-            if file.endswith(".tar.gz"):
+            lower = file.lower()
+            if lower.endswith(".tar.gz") or lower.endswith('.jpg') or lower.endswith('.jpeg') or lower.endswith('.png'):
                 # Create a relative path from the patient dir
                 rel_path = os.path.relpath(os.path.join(root, file), img_dir)
                 # Format: ID|RelPath
