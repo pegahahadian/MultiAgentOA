@@ -1,6 +1,5 @@
-# ✅ System Complete - Ready to Use
 
-## 🎯 What You Now Have
+## What We Have Here :
 
 A fully integrated **OA Diagnosis System** with:
 
@@ -13,7 +12,7 @@ A fully integrated **OA Diagnosis System** with:
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### Option 1: Click the Batch File (Easiest)
 ```
@@ -33,7 +32,7 @@ python -m chainlit run oa_diagnosis/app.py --port 8000
 
 ---
 
-## 👀 What You'll See
+##  What You'll See
 
 ### Step 1: Patient Data Loads
 ```json
@@ -89,7 +88,7 @@ User enters Patient ID
 
 ---
 
-## 📁 Key Files
+## Key Files
 
 ### To Run the App:
 - **`run_app.bat`** - One-click launcher
@@ -110,22 +109,16 @@ User enters Patient ID
 
 ---
 
-## 🎯 Features Implemented
+## Features Implemented -updated
 
-### Conciseness (✅ Done)
-- ✅ Removed all pleasantries ("Feel free to reach out...")
-- ✅ No duplicate metric reporting
-- ✅ One-line conclusions instead of long narratives
-- ✅ Structured JSON/bullet output format
-
-### Image Display (✅ Done)
+### Image Display
 - ✅ Each image shows with its KL Grade (0-4)
 - ✅ Prediction text (e.g., "KL=4 (Severe)")
 - ✅ Modality information (MR, X-Ray)
 - ✅ Image preview (when available)
 - ✅ Clear mapping between image and analysis
 
-### Workflow Integration (✅ Done)
+### Workflow Integration
 - ✅ Chainlit UI handles patient ID input
 - ✅ All 3 stages run sequentially
 - ✅ Real-time message display
@@ -141,7 +134,7 @@ User enters Patient ID
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 All systems tested and working:
 
@@ -179,7 +172,7 @@ Available test patients:
 
 ---
 
-## ⚡ Performance Notes
+##  Performance Notes
 
 **Typical Workflow Time:**
 - Stage 1: 2-3 minutes (depends on number of images)
@@ -195,15 +188,7 @@ Available test patients:
 
 ---
 
-## 🔧 Customization
-
-### To Add a New Patient:
-Add a row to `data/Clinical_FNIH_merged_all_tables.csv` with:
-- Patient ID
-- Demographics
-- WOMAC scores
-- Biomarkers
-- Image IDs pointing to `data/img/[PatientID]/[ImagePath]`
+##  Customization
 
 ### To Add a New Tool:
 1. Create function in `tools/`
@@ -222,7 +207,7 @@ Response style: [Your conciseness rules here]
 
 ---
 
-## ✨ What Makes This System Special
+##  What Makes This System Special
 
 ### User Experience:
 - **Simple**: One patient ID → Complete diagnosis
@@ -244,7 +229,7 @@ Response style: [Your conciseness rules here]
 
 ---
 
-## 🎓 System Flow Summary
+##  System Flow Summary
 
 ```
 CHAINLIT UI
@@ -284,55 +269,6 @@ USER SEES:
 - Treatment recommendations
 ```
 
----
-
-## ✅ Deployment Checklist
-
-- [x] All agents configured for concise output
-- [x] Image display integrated with KL grades
-- [x] Chainlit UI fully functional
-- [x] All tools registered and tested
-- [x] 3-stage workflow operational
-- [x] Real-time message display working
-- [x] Error handling in place
-- [x] Documentation complete
-- [x] Test scripts included
-- [x] Startup script created
 
 ---
-
-## 🚀 You're Ready!
-
-The system is **production-ready**. 
-
-### To start using it right now:
-
-**Windows (Easiest):**
-```
-Double-click: C:\Users\pahad\Desktop\AutoGen\oa_diagnosis\run_app.bat
-```
-
-**Command Line:**
-```bash
-cd C:\Users\pahad\Desktop\AutoGen
-python -m chainlit run oa_diagnosis/app.py --port 8000
-```
-
-Then:
-1. Open http://localhost:8000 in your browser
-2. Enter a patient ID (e.g., `9001695`)
-3. Watch the complete diagnosis workflow with all images and KL grades displayed
-
----
-
-## 📞 Need Help?
-
-Check these files:
-- **Error?** → Look in terminal output for `DEBUG:` messages
-- **How to use?** → Read `QUICKSTART.md`
-- **Technical details?** → Check `INTEGRATION_COMPLETE.md`
-- **Image features?** → See `IMAGING_DISPLAY_IMPROVEMENTS.md`
-
----
-
-**Everything is connected, tested, and ready. Enjoy the system! 🎉**
+Any question, contact pahadian@kent.edu
